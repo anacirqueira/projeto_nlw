@@ -1,5 +1,7 @@
 {
   "cSpell.words": [
     "typeorm"
-  ]
+  ],
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2
 }
