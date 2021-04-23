@@ -5,9 +5,11 @@ interface ISettingsCreate {
   chat: boolean;
   username: string;
 }
+
 class SettingsService {
   async create({ chat, username }: ISettingsCreate) {
     const settingsRepository = getCustomRepository(SettingsRepository);
+
     const userAlreadyExists = await settingsRepository.findOne({ username });
     if (userAlreadyExists) {
       throw new Error("User already exist!");
@@ -20,4 +22,4 @@ class SettingsService {
     return settings;
   }
 }
-export { SettingsService }
+export { SettingsService };
